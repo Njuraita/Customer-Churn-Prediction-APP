@@ -46,7 +46,7 @@ def customer_details():
     st.title('Customer Churn prediction page')
     st.write('Make your predictions here👇')
  
-    # model_choice = st.selectbox('Select Model', ('Gradient Boosting', 'Random Forest'))
+    # model_choice = st.selectbox('Select Model', ('Gradient Boosting', 'Random Forest','Support Vector Machine'))
     model_choice_column, _ = st.columns([1, 3])  # Adjust the ratio as needed
     with model_choice_column:
         model_choice = st.selectbox('Select Model', ('Gradient Boosting', 'Random Forest', 'Support Vector Machine'))
@@ -105,13 +105,14 @@ def customer_details():
     if model_choice == 'Gradient Boosting':
                     prediction_probabilities = gradient_model.predict_proba(user_inputs)
                     churn_probability = prediction_probabilities[0][1]
-                    make_predictions = gradient_model.predict(user_inputs)
-    else:   # Random Forest
-                    prediction_probabilities = random_forest.predict_proba(user_inputs)
-                    churn_probability = prediction_probabilities[0][1]
-                    make_predictions = random_forest.predict(user_inputs)
- 
- 
+                    make_predictions = gradient_model.predict(user_inputs)<<<<<<< Tabnine <<<<<<<
+    else:   # Random Forest#-
+                    prediction_probabilities = random_forest.predict_proba(user_inputs)#-
+                    churn_probability = prediction_probabilities[0][1]#-
+                    make_predictions = random_forest.predict(user_inputs)#-
+    
+  
+
     if make_predictions is not None:
         prediction_result = "Churned" if make_predictions[0] == 1 else "Not Churned"
         st.success(f"The predicted churn status is: {prediction_result}")
