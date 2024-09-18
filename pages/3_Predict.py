@@ -10,8 +10,8 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler,MinMaxScaler, RobustScaler
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder, OrdinalEncoder
 from sklearn.preprocessing import FunctionTransformer
-from imblearn.over_sampling import RandomOverSampler, SMOTE
-from imblearn.under_sampling import RandomUnderSampler
+#from imblearn.over_sampling import RandomOverSampler, SMOTE
+#from imblearn.under_sampling import RandomUnderSampler
 from sklearn.feature_selection import SelectKBest, mutual_info_classif
  
  
